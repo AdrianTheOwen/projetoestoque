@@ -1,13 +1,15 @@
 package org.estoque.estoque;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.estoque.estoque.model.*;
-import org.estoque.estoque.util.Util;
+import org.estoque.estoque.conexao.Conexao;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class HelloApplication extends Application {
     @Override
@@ -20,19 +22,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        Pessoas pessoas= new Pessoas();
-        Compra compra= new Compra();
-        Fornecedor fornecedor= new Fornecedor();
-        ItemCompra itemCompra= new ItemCompra();
-        Produto produto= new Produto();
-        ItemVenda itemVenda= new ItemVenda();
-        Venda venda= new Venda();
-        Util util= new Util();
+        Conexao conexao = new Conexao();
+        System.out.println(conexao.conectarComBancodeDados());
 
-
-
-        System.out.println("Coloque seu CPF"+pessoas.getCPF() );
-        System.out.println("Coloque seu CNPJ"+fornecedor.getCNPJ());
-      //  launch();
     }
 }
