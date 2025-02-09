@@ -1,6 +1,6 @@
 package org.estoque.estoque.model;
 
-public class Fornecedor {
+public class Fornecedor extends Pessoas {
 
     private String nome_fantasia="";
     private String CNPJ="00000000000100";

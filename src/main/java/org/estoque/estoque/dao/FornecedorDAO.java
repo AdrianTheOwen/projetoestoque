@@ -1,21 +1,19 @@
 package org.estoque.estoque.dao;
 
+import org.estoque.estoque.conexao.ConnectionFactory;
+import org.estoque.estoque.model.Fornecedor;
 import org.estoque.estoque.model.Funcionario;
+import org.estoque.estoque.model.Pessoas;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import org.estoque.estoque.conexao.ConnectionFactory;
-import org.estoque.estoque.model.Pessoas;
 import org.estoque.estoque.util.Util;
-
-public class FuncionarioDAO extends Pessoas {
+public class FornecedorDAO {
     Util util = new Util();
-
-    public void cadastroFuncionario(Funcionario funcionario) throws SQLException {
-        String sql = "INSERT INTO funcionario (dataEntrada,nome,CPF,matricula) VALUES (?,?,?,?)";
+    public void cadastroFornecedor(Fornecedor fornecedor) throws SQLException {
+        String sql = "INSERT INTO Fornecedor (dataCadastro,CNPJ,nomeFantasia) VALUES (?,?,?)";
         Connection connection = null;
         PreparedStatement pstm = null;
         try {
@@ -25,10 +23,9 @@ public class FuncionarioDAO extends Pessoas {
                 //Cria uma preparação para executar QUERY SQL
                 pstm = connection.prepareStatement(sql);
                 //Adiciona valores no banco
-                pstm.setDate(1,util.formatarData(new Date(funcionario.getData_cadastro().getTime())));
-                pstm.setString(2,funcionario.getNome());
-                pstm.setString(3,funcionario.getCPF());
-                pstm.setString(4,funcionario.getMatricula());
+                pstm.setDate(1,util.formatarData(new Date(fornecedor.getData_cadastro().getTime())));
+                pstm.setString(2,fornecedor.getCNPJ());
+                pstm.setString(3,fornecedor.getNome_fantasia());
 
                 //Executa o comando no Banco
                 pstm.execute();

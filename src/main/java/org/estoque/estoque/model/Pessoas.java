@@ -25,7 +25,6 @@ public class Pessoas {
        }
 
        public void setData_cadastro(Date data_cadastro) {
-
               this.data_cadastro = data_cadastro;
        }
 

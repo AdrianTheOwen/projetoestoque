@@ -1,7 +1,9 @@
 package org.estoque.estoque;
 
 import javafx.stage.Stage;
+import org.estoque.estoque.dao.FornecedorDAO;
 import org.estoque.estoque.dao.FuncionarioDAO;
+import org.estoque.estoque.model.Fornecedor;
 import org.estoque.estoque.model.Funcionario;
 
 import java.io.IOException;
@@ -19,15 +21,23 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Funcionario funcionario = new Funcionario();
-        FuncionarioDAO dao = new FuncionarioDAO();
+        //Funcionario funcionario = new Funcionario();
+        //FuncionarioDAO dao = new FuncionarioDAO();
 
-        funcionario.setData_cadastro(new Date());
-        funcionario.setNome("Adrian baracuda");
-        funcionario.setCPF("75412541254");
-        funcionario.setMatricula("1234567");
+        //funcionario.setData_cadastro(new Date());
+        //funcionario.setNome("A vigança do Sifis");
+        //funcionario.setCPF("78458745880");
+        //funcionario.setMatricula("7654327");
 
-        dao.cadastroFuncionario(funcionario);
+        //dao.cadastroFuncionario(funcionario);
+
+        Fornecedor fornecedor = new Fornecedor();
+        FornecedorDAO fornecedorDAO = new FornecedorDAO();
+        fornecedor.setData_cadastro(new Date());
+        fornecedor.setCNPJ("00000000000200");
+        fornecedor.setNome_fantasia("Star wars");
+        fornecedorDAO.cadastroFornecedor(fornecedor);
+
 
 
     }

@@ -21,7 +21,7 @@ public class Funcionario extends  Pessoas{
         this.status = status;
     }
 
-    public void cadastroFuncionario (){};
+    //public void cadastroFuncionario (){}; foi criado na classe FuncionarioDAO
     public void peqsuisaFuncionario (){};
     public void alterarFuncionario (){};
     public void validarCPF (){};
