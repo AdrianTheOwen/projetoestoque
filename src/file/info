@@ -1,0 +1,69 @@
+CREATE DATABASE Estoque;
+
+CREATE TABLE Pessoa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataCadastro DATE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    CPF CHAR(11) NOT NULL UNIQUE
+);
+
+CREATE TABLE Fornecedor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataCadastro DATE NOT NULL,
+    CNPJ CHAR(14) NOT NULL UNIQUE,
+    nomeFantasia VARCHAR(100)
+);
+
+CREATE TABLE Funcionario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataEntrada DATE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    CPF CHAR(11) NOT NULL UNIQUE,
+    matricula VARCHAR(255)
+);
+
+CREATE TABLE Produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL,
+    quantidadeMinima INT NOT NULL,
+    valorCompra DECIMAL(10,2) NOT NULL,
+    valorVenda DECIMAL(10,2) NOT NULL,
+    status BOOLEAN NOT NULL
+);
+
+CREATE TABLE Compra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataCompra DATE NOT NULL,
+    dataPagamento DATE,
+    valorTotalCompra DECIMAL(10,2) NOT NULL,
+    fornecedor_id INT NOT NULL
+);
+
+CREATE TABLE ItemCompra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    compra_id INT NOT NULL,
+    produto_id INT NOT NULL,
+    qtdItem INT NOT NULL,
+    valorItem DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (compra_id) REFERENCES Compra(id),
+    FOREIGN KEY (produto_id) REFERENCES Produto(id)
+);
+
+CREATE TABLE Venda (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataVenda DATE NOT NULL,
+    horaVenda TIME NOT NULL,
+    dataPagamento DATE,
+    valorTotalVenda DECIMAL(10,2) NOT NULL,
+    cliente_id INT NOT NULL,
+    funcionario_id INT NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES Cliente(id),
+    FOREIGN KEY (funcionario_id) REFERENCES Funcionario(id)
+);
+
+CREATE TABLE ItemVenda (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    qtdItem INT NOT NULL,
+    valorItem DECIMAL(10,2) NOT NULL
+);

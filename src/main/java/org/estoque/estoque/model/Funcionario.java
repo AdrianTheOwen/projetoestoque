@@ -1,8 +1,8 @@
 package org.estoque.estoque.model;
 
-public class Funcionario {
+public class Funcionario extends  Pessoas{
 
-    private String matricula= "00";
+    private String matricula= "0000000";
     private boolean status= false;
 
     public String getMatricula() {
