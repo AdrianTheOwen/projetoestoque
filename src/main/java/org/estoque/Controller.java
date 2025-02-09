@@ -1,4 +1,4 @@
-package org.estoque.estoque;
+package org.estoque;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,4 +1,4 @@
-package org.estoque.estoque.conexao;
+package org.estoque.conexao;
 
 import java.sql.*;
 

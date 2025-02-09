@@ -1,15 +1,15 @@
-package org.estoque.estoque.dao;
+package org.estoque.dao;
 
-import org.estoque.estoque.model.Funcionario;
+import org.estoque.model.Funcionario;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.estoque.estoque.conexao.ConnectionFactory;
-import org.estoque.estoque.model.Pessoas;
-import org.estoque.estoque.util.Util;
+import org.estoque.conexao.ConnectionFactory;
+import org.estoque.model.Pessoas;
+import org.estoque.util.Util;
 
 public class FuncionarioDAO extends Pessoas {
     Util util = new Util();

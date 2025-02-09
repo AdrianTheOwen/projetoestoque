@@ -8,6 +8,6 @@ module org.estoque.estoque {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
 
-    opens org.estoque.estoque to javafx.fxml;
-    exports org.estoque.estoque;
+    opens org.estoque to javafx.fxml;
+    exports org.estoque;
 }

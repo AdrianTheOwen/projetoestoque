@@ -1,6 +1,6 @@
-package org.estoque.estoque.model;
+package org.estoque.model;
 
-import org.estoque.estoque.util.Util;
+import org.estoque.util.Util;
 
 import java.util.Date;
 

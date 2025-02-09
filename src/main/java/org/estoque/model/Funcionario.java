@@ -1,4 +1,4 @@
-package org.estoque.estoque.model;
+package org.estoque.model;
 
 public class Funcionario extends  Pessoas{
 

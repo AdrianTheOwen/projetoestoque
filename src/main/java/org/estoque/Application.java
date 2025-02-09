@@ -1,10 +1,8 @@
-package org.estoque.estoque;
+package org.estoque;
 
 import javafx.stage.Stage;
-import org.estoque.estoque.dao.FornecedorDAO;
-import org.estoque.estoque.dao.FuncionarioDAO;
-import org.estoque.estoque.model.Fornecedor;
-import org.estoque.estoque.model.Funcionario;
+import org.estoque.dao.FornecedorDAO;
+import org.estoque.model.Fornecedor;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -34,8 +32,8 @@ public class Application extends javafx.application.Application {
         Fornecedor fornecedor = new Fornecedor();
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         fornecedor.setData_cadastro(new Date());
-        fornecedor.setCNPJ("00000000000200");
-        fornecedor.setNome_fantasia("Star wars");
+        fornecedor.setCNPJ("00000000000300");
+        fornecedor.setNome_fantasia("Star wars fantasma");
         fornecedorDAO.cadastroFornecedor(fornecedor);
 
 
